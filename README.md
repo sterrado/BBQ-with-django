@@ -27,15 +27,15 @@ Note: If you don't activate your environment, or don't select your interpreter c
 
 Pip install django, django admin
 
-Run python django-admin startproject <myprojectname>
+Run python django-admin startproject $myprojectname
 
-cd into <myprojectname>
+cd into $myprojectname
 
-run python manage.py startapp <appname> --> Start with 'asado'
+run python manage.py startapp $appname --> Start with 'asado'
 
 pip install django-rest-framework
 
-go to <myprojectname>.settings.py , register the app and rest_framework in INSTALLED_APPS. Like, append the string 'asado' and 'rest_framework' to that list.
+go to $myprojectname>.settings.py , register the app and rest_framework in INSTALLED_APPS. Like, append the string 'asado' and 'rest_framework' to that list
 
 cd .. to root folder and run <q> pip freeze > requirements.txt</q> --> This is the dependencies list for new devs incoming to the project, they'll just run pip install -r requirements.txt and have everything they need installed.
 
@@ -48,7 +48,7 @@ Time to do a commit... <q> git add . </q> and <q> git commit -m 'added project s
 
 Make your first endpoint just to test. Go in your app views.py file (where logic lies) and make a function that receives a request and returns 'Hello world'. Make sure to use api_view decorator and to return a Response Object from rest_framework.response.
 After you make this function, you need to configure routing. So make an urls.py file in your app, and link the urls.py file from your project urls.py file to this new file in your app.
-Run <q>python manage.py runserver</q> from your django project directory and access this endpoint from the browser (http://localhost:8000/<path>/)
+Run <q>python manage.py runserver</q> from your django project directory and access this endpoint from the browser (http://localhost:8000/$path/)
 
 <em>Task 3</em>
 
@@ -72,7 +72,7 @@ Also, if you don't return a Response object from django rest framework, it won't
 
 Now do a viewset in views.py. Learn how to do a ModelViewSet from rest framework, learn how to configure it in the routing (you'll need a simple router or default router from rest framework).
 
-Once you have your viewset, you'll be able to create, get all, get by id (/<path>/<id>/), delete, etc.
+Once you have your viewset, you'll be able to create, get all, get by id (/$path/$id/), delete, etc.
 
 <em>Task 5</em>
 
@@ -99,4 +99,4 @@ Note: If you're more interested in relations, check fields ForeignKey and OneToO
 
 <h1>Lets goo!</h1>
 
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmakeameme.org%2Fmeme%2Flets-do-this-8829e7bf89&psig=AOvVaw3bNitrwE_WH2bYTQ2bfY1U&ust=1679069061974000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMCB4Orp4P0CFQAAAAAdAAAAABAF">
+<img src="https://media.makeameme.org/created/lets-do-this-8829e7bf89.jpg">
