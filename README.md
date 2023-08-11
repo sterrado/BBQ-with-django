@@ -1,10 +1,8 @@
-<h1>Welcome to the Nacho excercise!</h1>
+<h1>Welcome to the BBQ excercise!</h1>
 
 <h4>Read the instructions very carefully!</h4>
 
-<strong>Consigna:</strong>
-
-You'll prepare an api for a frontendless app to organize asados. In case you want, we'll leave the front end part for a version 2. The main entities to be related are Asado(event), Person(many), Meat(many). There are some bonus tracks. We'll use Django Rest Framework for this.
+You'll prepare an api for a frontendless app to organize bbqs. In case you want, we'll leave the front end part for a version 2. The main entities to be related are BBQ(event), Person(many), Meat(many). There are some bonus tracks. We'll use Django Rest Framework for this.
 
 <strong>Additional things</strong>
 
@@ -31,18 +29,18 @@ Run python django-admin startproject $myprojectname
 
 cd into $myprojectname
 
-run python manage.py startapp $appname --> Start with 'asado'
+run python manage.py startapp $appname --> Start with 'bbq'
 
 pip install django-rest-framework
 
-go to $myprojectname>.settings.py , register the app and rest_framework in INSTALLED_APPS. Like, append the string 'asado' and 'rest_framework' to that list
+go to $myprojectname>.settings.py , register the app and rest_framework in INSTALLED_APPS. Like, append the string 'bbq' and 'rest_framework' to that list
 
 cd .. to root folder and run <q> pip freeze > requirements.txt</q> --> This is the dependencies list for new devs incoming to the project, they'll just run pip install -r requirements.txt and have everything they need installed.
 
 make a .gitignore file in the root folder, add venv there so you don't upload your virtual environment to github. The folder name should be in gray color.
 
-Ok, you have the main structure. You have your django project with its folder with settings, and its linked to your first app 'asado'. You also have rest framework installed correctly.
-Time to do a commit... <q> git add . </q> and <q> git commit -m 'added project setup and asado app'</q>. From now on, go ahead with your commits on your own.
+Ok, you have the main structure. You have your django project with its folder with settings, and its linked to your first app 'bbq'. You also have rest framework installed correctly.
+Time to do a commit... <q> git add . </q> and <q> git commit -m 'added project setup and bbq app'</q>. From now on, go ahead with your commits on your own.
 
 <em>Task 2</em>
 
@@ -52,18 +50,18 @@ Run <q>python manage.py runserver</q> from your django project directory and acc
 
 <em>Task 3</em>
 
-Make a model for asado. After creating the model, run <q>python manage.py makemigrations</q> , your migration files are created. Then run <q> python manage.py migrate</q> to actually migrate. You now created a table for storing and retrieving data for asado model. You also migrated some more django built in tables.
+Make a model for bbq. After creating the model, run <q>python manage.py makemigrations</q> , your migration files are created. Then run <q> python manage.py migrate</q> to actually migrate. You now created a table for storing and retrieving data for bbq model. You also migrated some more django built in tables.
 
-Make a file called serializers.py and make a Model Serializer from rest framework using Asado model as model.
+Make a file called serializers.py and make a Model Serializer from rest framework using BBQ model as model.
 
-In views.py make two endpoints, one to register an asado, and one to retrieve all asados. One is post request, the other get, this you define in @api_view decorator.
+In views.py make two endpoints, one to register an bbq, and one to retrieve all bbqs. One is post request, the other get, this you define in @api_view decorator.
 You'll have to read about django ORM. Some examples:
 
-Asado.objects.create()
-Asado.objects.all()
-Asado.objects.first()
-Asado.objects.filter() --> list
-Asado.objects.get() --> one object
+BBQ.objects.create()
+BBQ.objects.all()
+BBQ.objects.first()
+BBQ.objects.filter() --> list
+BBQ.objects.get() --> one object
 
 Notes: If you return a model without serializing, you won't be able to see its data. Serializer turns an object of type <object> to json data.
 Also, if you don't return a Response object from django rest framework, it won't work.
@@ -76,16 +74,16 @@ Once you have your viewset, you'll be able to create, get all, get by id (/$path
 
 <em>Task 5</em>
 
-Make a new app called person. Do a model, a serializer and a viewset. Make sure this model is related to asado with a many to many (make it null = True). Now you can have multiple people related with multiple asados. Make your migrations.
+Make a new app called person. Do a model, a serializer and a viewset. Make sure this model is related to bbq with a many to many (make it null = True). Now you can have multiple people related with multiple bbqs. Make your migrations.
 
-Try serializing a list of person in the asado's serializer. You can go to the asado serializer, import the person serializer, add a field called people = PersonSerializer(many=True, required=False) and in the Person model, add related_name= 'people' to the many to many field. This is how you link them in the serializer.
+Try serializing a list of person in the bbq's serializer. You can go to the bbq serializer, import the person serializer, add a field called people = PersonSerializer(many=True, required=False) and in the Person model, add related_name= 'people' to the many to many field. This is how you link them in the serializer.
 
-So now, when your retrieve an asado or all asados, you'll have the people that attend to them.
+So now, when your retrieve an bbq or all bbqs, you'll have the people that attend to them.
 
 
 <em>Task 6</em>
 
-Make the same task 5 but for meat. So now you can add entraña, lomo, etc to an asado. 
+Make the same task 5 but for meat. So now you can add Flat Iron, T-bone Steak, etc to an asado. 
 
 Note: If you're more interested in relations, check fields ForeignKey and OneToOneRelationship, this is to make a OneToOne and OneToMany relationships.
 
@@ -97,6 +95,6 @@ Note: If you're more interested in relations, check fields ForeignKey and OneToO
     <li>Deploy the app on heroku, which is free so that anyone can access your awesome api. Check on google how to deploy a django project on heroku.</li>
 </ul>
 
-<h1>Lets goo!</h1>
+<h1>Lets go!</h1>
 
 <img src="https://media.makeameme.org/created/lets-do-this-8829e7bf89.jpg">
