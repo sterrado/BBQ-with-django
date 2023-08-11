@@ -2,14 +2,14 @@
 
 <h4>Read the instructions very carefully!</h4>
 
-You'll prepare an api for a frontendless app to organize bbqs. In case you want, we'll leave the front end part for a version 2. The main entities to be related are BBQ(event), Person(many), Meat(many). There are some bonus tracks. We'll use Django Rest Framework for this.
+You'll prepare an api for a frontendless app to organize bbqs. The main entities to be related are BBQ(event), Person(many), Meat(many). There are some bonus tracks. We'll use Django Rest Framework for this.
 
 <strong>Additional things</strong>
 
 <ul>
     <li>Use github to track code versioning. Make commits as you develop, maybe a commit per task or more</li>
     <li>You can use different branches also per task and then do a pull request to the main branch, but this is optional</li>
-    <li>You can ask Santiago anything if you get stuck, don't waste too much time when stuck, but google things first.</li>
+    <li>Google things when you get stuck, check the Django rest framework documentation!</li>
     <li>We can, and I'd say we should, make code reviews every now and then</li>
     <li>You have to be familiar with how REST protocol works: GET, POST, PUT, PATCH and DELETE methods</li>
     <li>Django and Django rest framework documentation will be your main ally for this</li>
